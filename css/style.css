@@ -526,6 +526,10 @@ p {
 
 /* =============== Backdrop =============== */
 .backdrop{
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -533,6 +537,7 @@ p {
   width: 100%;
   height: 100%;
   background-color: #2E2F4266;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal{
@@ -541,6 +546,7 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
 
+  padding: 72px 24px 24px;
   width: 408px;
   min-height: 584px;
   border-radius: 4px;
@@ -548,15 +554,113 @@ p {
 }
 
 .modal-close-btn{
- border: 1px #E7E9FC solid;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background-color: #E7E9FC;
+  border: 1px solid rgba(0, 0, 0, 0.10);
   border-radius: 50%;
+  fill: #2E2F42;
+  line-height: 0;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal{
-  display: flex;
-  flex-direction: column;
+.modal-close-btn:hover, 
+.modal-close-btn:focus{
+  fill: #ffffff;
+  background-color: #404BBF;
 }
 
-.form-label-text{
+.user-heading{
+  color:#2E2F42;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.user-input{
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(46, 47, 66, 0.40);
+  border-radius: 4px;
+  background-color: transparent;
+  padding-left: 38px;
+  outline: 0px solid transparent;
+}
+
+.user-input:focus{
+  border-color: #4D5AE5;
+}
+
+
+.user-input:focus + .user-input-icon{
+  fill: #4D5AE5;
+}
+
+.user-form-wrapper{
+  margin-bottom: 8px;
+}
+
+.privacy-link{
+  text-decoration-line: underline;
+  color: #4D5AE5;
+}
+
+.user-label{
+  color: #8E8F99;
+  font-size: 12px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.user-input-wrapper{
+  position: relative;
+}
+
+.user-input-icon{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user-comment{
+  width: 100%;
+  height: 120px;
+  border-radius: 4px;
+  border: 1px solid rgba(46, 47, 66, 0.40);
+  background-color: transparent;
+  padding: 8px 16px;
   resize: none;
+  outline: 0px solid transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user-comment:focus{
+  border-color: #4D5AE5;
+}
+
+:placeholder-shown{
+  color: (46, 47, 66, 0.40);
+  font-size: 12px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+}
+
+.backdrop.is-open{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }

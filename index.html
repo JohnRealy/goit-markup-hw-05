@@ -539,21 +539,18 @@
             ></textarea>
           </div>
           <div class="user-form-checkbox-wrapper">
-            <svg
-              class="done-icon"
-              width="10"
-              height="8"
-              aria-label="Privacy policy checkbox"
-            >
-              <use href="./images/icons.svg#icon-done-icon"></use>
-            </svg>
+            <input class="privacy-input visually-hidden" type="checkbox" name="privacy-checkbox" id="privacy-checkbox" value="true" required>
             <label class="user-label" for="privacy-checkbox">
+              <span class="privacy-checkbox">
+                <svg class="done-icon" width="10" height="8" aria-label="Privacy policy checkbox">
+                  <use href="./images/icons.svg#icon-done-icon"></use>
+                </svg>
+              </span>
               I accept the terms and conditions of the
               <a href="#" class="privacy-link">Privacy Policy</a>
             </label>
-            <input class="privacy-input" type="checkbox" name="privacy-checkbox" id="privacy-checkbox" value="true" required>
-          </div>
-          <button type="submit">Send</button>
+            </div>
+            <button class="sumbit-btn" type="submit">Send</button>
         </form>
       </div>
     </div>
